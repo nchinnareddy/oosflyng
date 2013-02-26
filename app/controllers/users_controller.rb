@@ -74,7 +74,7 @@ class UsersController < ApplicationController
       users = User.all
       users.each do |user|
         distance = lat_lon_to_distance(current_user.current_latitude,current_user.current_longitude,user.current_latitude,user.current_longitude)
-        if distance >= min_distance and distance <= max_distance
+        if distance >= min_distance and distance <= max_distance and user.user_facebook_uid != current_user.user_facebook_uid
           near_users << {
             :user_facebook_uid => user.user_facebook_uid,
             :user_name => user.fullname,
