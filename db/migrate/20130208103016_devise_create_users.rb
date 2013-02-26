@@ -36,8 +36,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :fullname
       t.string :user_facebook_uid
       t.string  :facebook_access_token
-      t.integer :current_latitude
-      t.integer :current_longitude
+      t.float :current_latitude
+      t.float :current_longitude
 
       t.timestamps
     end

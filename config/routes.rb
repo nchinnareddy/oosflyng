@@ -1,7 +1,12 @@
 Oosflyng::Application.routes.draw do
   # devise_for :users
+
+  resources :users do
+    collection do
+      get :near_by
+    end
+  end
   match 'users/:user_facebook_uid' => 'users#show'
-  resources :users
 
  # resources :home do
  #   collection do
